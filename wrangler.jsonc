@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "fragrant-mode-7ca1",
+  "name": "pngkayasites",
   "compatibility_date": "2026-11-14",
   "assets": {
     "directory": "./public"
