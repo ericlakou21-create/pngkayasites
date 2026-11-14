@@ -1,0 +1,31 @@
+PNG KAYA SITES — Cloudflare deployment package
+
+IMPORTANT: This package targets the existing Worker named fragrant-mode-7ca1.
+It is configured to publish the website files in ./public as Cloudflare static assets.
+Do not create a new Worker and do not change the domain's DNS.
+
+On Android, after downloading this ZIP into Downloads:
+
+1. Open Termux and run:
+   termux-setup-storage
+   pkg update -y && pkg upgrade -y
+   pkg install nodejs-lts unzip -y
+
+2. Extract the ZIP:
+   mkdir -p ~/pngkaya-deploy
+   unzip -o ~/storage/downloads/PNG-KAYA-CLOUDFLARE-DEPLOY.zip -d ~/pngkaya-deploy
+   cd ~/pngkaya-deploy
+
+3. Deploy to the existing Cloudflare account/Worker:
+   npx wrangler deploy
+
+4. Follow the browser sign-in/authorization prompt. Confirm the Worker name shown is
+   fragrant-mode-7ca1 before approving deployment.
+
+5. When Wrangler reports success, test:
+   https://pngkayasites.com/manifest.webmanifest
+
+The manifest should display JSON, not a 404 page.
+
+Do not paste API tokens or passwords into chat. If Wrangler asks to create a new
+Worker or shows a different Worker name, stop and share a screenshot before proceeding.
